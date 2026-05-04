@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="SaveMyNotes.API/SaveMyNotes.API.csproj" />
+  <Project Path="SaveMyNotes.Application/SaveMyNotes.Application.csproj" />
+  <Project Path="SaveMyNotes.Domain/SaveMyNotes.Domain.csproj" />
+  <Project Path="SaveMyNotes.Infrastructure/SaveMyNotes.Infrastructure.csproj" />
+</Solution>

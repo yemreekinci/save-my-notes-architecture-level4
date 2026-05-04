@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SaveMyNotes.Domain\SaveMyNotes.Domain.csproj" />
+		<ProjectReference Include="..\SaveMyNotes.Application\SaveMyNotes.Application.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FastBertTokenizer" Version="1.0.28" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.7" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.7">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.7" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.7">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.Http" Version="10.0.7" />
+		<PackageReference Include="Microsoft.ML" Version="5.0.0" />
+		<PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.25.1" />
+		<PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
+		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="MLModels\vocab.txt">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="MLModels\keyword-extractor.onnx">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<!-- YENİ DOSYALAR -->
+		<None Update="MLModels\dev-lexicon.txt">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="MLModels\software-terms.dic">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+</Project>

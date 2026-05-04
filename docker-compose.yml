@@ -1,0 +1,31 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: savemynotes_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: emre123
+      POSTGRES_DB: SaveMyNotesDb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: savemynotes_api
+    image: savemynotes_api
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=SaveMyNotesDb;Username=postgres;Password=emre123
+      - AI__GroqApiKey=${GROQ_API_KEY}
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
