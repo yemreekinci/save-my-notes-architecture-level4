@@ -51,8 +51,14 @@ This project is built on **Clean Architecture** principles to provide a sustaina
 ## Kurulum / Installation
 
 1. Projeyi klonlayın / Clone the project: `git clone https://github.com/username/SaveMyNotes.git`
-2. API anahtarlarınızı `appsettings.json` dosyasına ekleyin / Add your API keys to `appsettings.json`:
+2. API anahtarlarınızı `appsettings.json` ve `docker-compose-yml` dosyalarınıza ekleyin / Add your API keys to `appsettings.json` and `docker-compose-yml`:
+   
    ```json
    "GroqSettings": {
      "ApiKey": "YOUR_GROQ_API_KEY"
    }
+    ```
+    ```json
+   environment:
+      - AI__GroqApiKey=${GROQ_API_KEY}
+    ```
